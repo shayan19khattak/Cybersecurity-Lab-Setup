@@ -4,11 +4,11 @@ Building a controlled virtual lab for cybersecurity learning, penetration testin
 
 ## Project Overview
 
-This project documents the setup of a beginner-friendly cybersecurity lab using Oracle VirtualBox and Kali Linux on a Windows 11 host computer.
+This project documents the setup of a beginner-friendly cybersecurity lab using Oracle VirtualBox, Kali Linux, Windows 10 and Android vm on a Windows 11 host computer.
 
 The purpose of this lab is to establish a controlled virtual environment for learning cybersecurity fundamentals, practicing authorized security testing, and conducting future hands-on security projects.
 
-The setup includes a dedicated VirtualBox NAT Network, Kali Linux network configuration, connectivity testing, and a clean virtual machine snapshot for recovery.
+The setup includes a dedicated VirtualBox NAT Network, Kali Linux network configuration,Windiws network configuration, Android network configuration, connectivity testing, and a clean virtual machine snapshot for recovery.
 
 ## Objectives
 
@@ -37,7 +37,7 @@ The environment will support future learning activities, including:
 
 ## Lab Architecture
 
-The lab uses a Windows 11 host computer running Oracle VirtualBox, with Kali Linux operating as a guest virtual machine.
+The lab uses a Windows 11 host computer running Oracle VirtualBox, with Kali Linux, Windows 10 and Android 9 operating as a guest virtual machine.
 
 A dedicated VirtualBox NAT Network provides a separate virtual networking environment for future lab machines. Network isolation settings should be reviewed before introducing additional virtual machines or conducting security exercises.
 
@@ -67,14 +67,11 @@ Opened Oracle VirtualBox and created a dedicated NAT Network for the cybersecuri
 5. Attached the Kali Linux virtual machine to the intended NAT Network.
 6. Verified that the selected network configuration matches the lab requirements.
 
-![VirtualBox NAT Network Settings](Screenshots/VirtualBox_NATNetwork.png)
+![image alt](https://github.com/shayan19khattak/Cybersecurity-Lab-Setup/blob/99227ca2c100bfd00405333c265c1a517da2d9c9/Screenshots/VitualBox_NATNetwork.png)
 
-### Step 4: Import and Start Kali Linux
+### Step 4: Import and Configure Kali Linux
 
 The Kali Linux virtual machine was downloaded from the [official Kali Linux website](https://www.kali.org/get-kali/) and imported into Oracle VirtualBox.
-
-
-### Step 5: Configure the Kali Linux Network
 
 Inspected the Kali Linux network settings through the graphical network settings interface.
 
@@ -83,70 +80,44 @@ Inspected the Kali Linux network settings through the graphical network settings
 3. Confirmed that the virtual machine is connected to the intended VirtualBox network.
 4. Reviewed the network configuration and confirm that the connection is active.
 
+![image alt](https://github.com/shayan19khattak/Cybersecurity-Lab-Setup/blob/99227ca2c100bfd00405333c265c1a517da2d9c9/Screenshots/VirtualBox_Kali%20linux_27_10_2026_23_59_38.png)
 
-### Step 6: Configure a Shared Folder
+### Step 5: Import and Configure Windows 10
 
-A VirtualBox shared folder was used to transfer screenshots and documentation between the Windows host and Kali Linux.
+The Windows virtual machine was downloaded from the [official Microsoft website](https://www.microsoft.com/en-us/software-download/windows10) and imported into Oracle VirtualBox.
 
-1. Created a folder on the Windows host for lab file transfers.
-2. Opened the Kali Linux virtual machine's settings in VirtualBox.
-3. Added the shared folder and select the appropriate host folder.
-4. Enabled automatic mounting if required.
-5. Confirmed that Kali Linux can access the shared folder.
+Inspected the Wimdows network settings through the graphical network settings interface.
 
+1. Opened the windows network settings.
+2. Reviewed the available network interface and connection status.
+3. Confirmed that the virtual machine is connected to the intended VirtualBox network.
+4. Reviewed the network configuration and confirm that the connection is active.
 
-### Step 7: Take a Clean VM Snapshot
+![image alt](https://github.com/shayan19khattak/Cybersecurity-Lab-Setup/blob/99227ca2c100bfd00405333c265c1a517da2d9c9/Screenshots/VirtualBox_Win10_28_10_2026_00_37_34.png)
 
-A clean snapshot of the Kali Linux virtual machine provides a recovery point before performing cybersecurity lab exercises. It can help restore the VM to its saved state if a future experiment causes unexpected configuration changes.
+### Step 6: Import and Configure Android 9
 
+The Android virtual machine was downloaded from the [Sourceforge website](https://sourceforge.net/projects/android-x86/postdownload) and imported into Oracle VirtualBox.
 
-The clean snapshot was created using Oracle VirtualBox's snapshot functionality.
+Inspected the Android network settings through the graphical network settings interface.
 
-![Kali Linux Virtual Machine and Clean Snapshot](screenshots/01-virtualbox-kali-vm.png)
+1. Opened the Android network settings.
+2. Reviewed the available network interface and connection status.
+3. Confirmed that the virtual machine is connected to the intended VirtualBox network.
+4. Reviewed the network configuration and confirm that the connection is active.
 
-**Verification:** The screenshot documents the Kali Linux virtual machine and its clean snapshot in Oracle VirtualBox. The snapshot can be used as a recovery point before future lab activities.
+![image alt](https://github.com/shayan19khattak/Cybersecurity-Lab-Setup/blob/99227ca2c100bfd00405333c265c1a517da2d9c9/Screenshots/VirtualBox_Android%20OS%209_28_10_2026_00_13_43.png )
 
 ## 🔎 Lab Verification
+ Pinged all the virtual machines to test connectivity
 
-The Kali Linux lab environment was verified by checking the network interface configuration, testing connectivity to the NAT Network gateway and an external IP address, and confirming that the clean VM snapshot can restore the baseline configuration.
+ ![image alt](https://github.com/shayan19khattak/Cybersecurity-Lab-Setup/blob/99227ca2c100bfd00405333c265c1a517da2d9c9/Screenshots/ping%20from%20kali.png)
 
-| **Test**                   | **Command**                               | **Expected Result**                             |
-| -------------------------- | ----------------------------------------- | ----------------------------------------------- |
-| Check IP address           | `ip a`                                    | Correct Kali Linux IP address displayed         |
-| Test gateway               | `ping -c 4 10.0.0.1`                      | Successful replies from the gateway             |
-| Test Internet connectivity | `ping -c 4 8.8.8.8`                       | Successful replies from the external IP address |
-| Verify snapshot            | Restore the clean snapshot and run `ip a` | Baseline configuration restored                 |
+ ![image alt](https://github.com/shayan19khattak/Cybersecurity-Lab-Setup/blob/99227ca2c100bfd00405333c265c1a517da2d9c9/Screenshots/ping%20from%20windows.png)
 
-### Example Results
+ ![image alt](https://github.com/shayan19khattak/Cybersecurity-Lab-Setup/blob/99227ca2c100bfd00405333c265c1a517da2d9c9/Screenshots/ping%20from%20android.png)
 
-The following values represent the intended lab network configuration. Confirm them against the actual command output before treating them as verified results.
-
-```text
-IP Address:
-10.0.0.2/24
-
-Gateway:
-10.0.0.1
-
-DNS:
-8.8.8.8
-```
-
-## 🐞 Problems Encountered & Solutions
-
-During lab setup and verification, the following troubleshooting approaches are useful when issues arise.
-
-| Potential problem                   | Troubleshooting approach                                                                       |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Compressed file cannot be extracted | Confirm that 7-Zip is installed and the downloaded archive is complete.                        |
-| Kali Linux does not start           | Review the VM configuration and confirm that the virtual machine image was imported correctly. |
-| Network connection is unavailable   | Check the VirtualBox network attachment and Kali Linux network settings.                       |
-| Domain connectivity test fails      | Check the connection status, hostname resolution, and whether ICMP traffic is filtered.        |
-| Shared folder is inaccessible       | Review the VirtualBox shared-folder configuration and guest permissions.                       |
-| VM configuration becomes unstable   | Use the clean snapshot as a recovery point, after considering any changes that would be lost.  |
-
-These are troubleshooting references for the lab. They should not be interpreted as a claim that every listed problem occurred during setup.
-
+ 
 ## What I Learned
 
 Through this project, I developed practical familiarity with:
