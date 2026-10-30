@@ -8,7 +8,7 @@ This project documents the setup of a beginner-friendly cybersecurity lab using 
 
 The purpose of this lab is to establish a controlled virtual environment for learning cybersecurity fundamentals, practicing authorized security testing, and conducting future hands-on security projects.
 
-The setup includes a dedicated VirtualBox NAT Network, Kali Linux network configuration,Windiws network configuration, Android network configuration, connectivity testing, and a clean virtual machine snapshot for recovery.
+The setup includes a dedicated VirtualBox NAT Network, Kali Linux network configuration,Windows network configuration, Android network configuration, connectivity testing, and a clean virtual machine snapshot for recovery.
 
 ## Objectives
 
