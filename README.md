@@ -67,32 +67,12 @@ Opened Oracle VirtualBox and created a dedicated NAT Network for the cybersecuri
 5. Attached the Kali Linux virtual machine to the intended NAT Network.
 6. Verified that the selected network configuration matches the lab requirements.
 
-![VirtualBox NAT Network Settings](screenshots/07-virtualbox-network-settings.png)
-
-**Note:** A NAT Network provides virtual networking and outbound connectivity, but it should not automatically be considered a fully isolated security boundary. Review network connectivity and access settings before performing security experiments.
+![VirtualBox NAT Network Settings](Screenshots/VirtualBox_NATNetwork.png)
 
 ### Step 4: Import and Start Kali Linux
 
 The Kali Linux virtual machine was downloaded from the [official Kali Linux website](https://www.kali.org/get-kali/) and imported into Oracle VirtualBox.
 
-**Virtual Machine Network Configuration**
-
-The VM network adapter was configured as follows:
-
-```text
-Adapter 1
-Attached to:  NAT Network
-Network:      NatNetwork
-Adapter Type: Intel PRO/1000 MT Desktop
-```
-
-**Virtual Machine Resource Allocation**
-
-```text
-RAM: 4096 MB
-```
-
-![Kali Linux Desktop](screenshots/02-kali-desktop.png)
 
 ### Step 5: Configure the Kali Linux Network
 
@@ -103,7 +83,6 @@ Inspected the Kali Linux network settings through the graphical network settings
 3. Confirmed that the virtual machine is connected to the intended VirtualBox network.
 4. Reviewed the network configuration and confirm that the connection is active.
 
-![Kali Linux Network Configuration](screenshots/04-network-configuration.png)
 
 ### Step 6: Configure a Shared Folder
 
