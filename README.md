@@ -1,5 +1,4 @@
-# Cybersecurity-Lab-Setup
-# Cybersecurity Lab Environment Setup
+# Cybersecurity and Pentesting Lab Environment Setup
 
 Building a controlled virtual lab for cybersecurity learning, penetration testing, and ethical hacking practice.
 
