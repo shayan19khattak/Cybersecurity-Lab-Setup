@@ -1,6 +1,5 @@
 # Cybersecurity-Lab-Setup
 Networkwalks Cybersecurity & EH Internship Week 1
-
 project module 1: Cybersecurity and pentesting lab setup
 During this project, I learned how to;
 1. Setup Kali Linux, Windows 10 and Android 9 virtual machines using Oracle VirtualBox.
