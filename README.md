@@ -41,10 +41,6 @@ The lab uses a Windows 11 host computer running Oracle VirtualBox, with Kali Lin
 
 A dedicated VirtualBox NAT Network provides a separate virtual networking environment for future lab machines. Network isolation settings should be reviewed before introducing additional virtual machines or conducting security exercises.
 
-### Lab Architecture Diagram
-
-![Cybersecurity Lab Architecture](screenshots/08-lab-architecture.png)
-
 
 ## Lab Setup Procedure
 
